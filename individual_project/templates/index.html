@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fantasy blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <header class = "navbar">
+        <div class = "navbar_image">
+            <img class = "subreddit_logo" src="{{ url_for('static', filename='images/subreddit logo.png')}}" alt="/r/fantasyfootball logo">
+            <span>/r/fantasyfootball best O.C. 23</span>
+        </div>
+        <ul class = "navbar_navigation">
+            <li class = "navbar_items"><a href="#" class = 'navbar_link'>Home</a></li>
+            <li class = "navbar_items"><a href="#" class = 'navbar_link'>All Posts</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section>
+            <h1>RECENT AWESOME FANTASY POSTS</h1>
+            <article class = 'post'>
+                {% for peaked in peaked %}
+                <div>
+                    <h2 class = 'post_title'><a href="{{peaked['url']}}" class = "post_link">{{peaked['title']}}</a></h2>
+                </div>
+                <p class = "post_details">{{peaked['user']}} • posted on: {{peaked['created']}} • {{peaked['num_comments']}} comments</p>
+                {% endfor %}
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>BREAKING NEWS</h2>
+                {% for news in news %}
+                <div>
+                    <h2 class = 'post_title'><a href="{{news["link"]}}" class = "post_link">{{news["description"]}}</a></h2>
+                </div>
+                {% endfor %}
+            </article>
+        </section>
+    </main>
+        
+    <footer class="footer">
+        <div class="footer_content"></div>
+            <section class = "left">            
+                <span class = footer_non_link_item>Made by Connor Burke</span>
+                <a class = footer_item href="#">Other Projects</a>
+            </section>
+
+            <section class = "right">
+                <a class = footer_item href="#">About</a>
+                <a class = footer_item href="#">Resources for this Project</a>
+            </section>
+            </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+body {
+    color: rgb(49, 51, 54);
+    margin: 0;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+    text-align: center;
+}
+.navbar {
+    max-width: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 20px;
+    background-color: rgb(207, 207, 207);
+    border-bottom: 4px solid black;
+}
+
+.navbar_image {
+    display: flex;
+    align-items: center;
+    vertical-align: top;
+    text-align: center;
+    width: 120px
+}
+
+.subreddit_logo {
+    margin-right: 30px;
+}
+
+.navbar_navigation {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar_items {
+    padding: 3px;
+    margin-left: 50px;
+}
+
+.navbar_link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.post_title {
+    font-size: 18px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.post_link{
+    font-size: 18px;
+    text-decoration: none;
+    color: inherit
+}
+
+.post_details {
+    display: inline;
+    color: #5c6b70;
+    line-height: 150%;
+    text-align: center;
+}
+
+.footer {
+    background-color: rgb(207, 207, 207);
+    padding: 15px 0;
+    margin: 30px 0 0 0; 
+    border-top: 4px solid black;
+    max-width: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer .left {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .right {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_item{
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 5px;
+}
+
+.footer_non_link_item {
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 5px;
+}
+
+.navbar_link:hover {
+    text-decoration: underline;
+}
+
+.post_link:hover {
+    text-decoration: underline;
+}
+
+.footer_item:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(104, 13, 13)
+}
+
+h2 {
+    text-decoration: underline;
+    color: rgb(104, 13, 13)
+}
