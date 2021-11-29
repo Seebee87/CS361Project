@@ -23,7 +23,6 @@ main {
 
 .navbar_image {
     display: flex;
-    align-items: center;
     vertical-align: top;
     text-align: center;
     width: 120px

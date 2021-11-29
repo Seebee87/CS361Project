@@ -1,6 +1,3 @@
-from bs4 import BeautifulSoup
-from requests import get, Response
-import json
 import requests
 import praw
 import datetime
@@ -25,7 +22,7 @@ def get_posts():
 
 def get_peaked():
     posts = []
-    for i in ff.search('title:Reddit Adjusted Trade AND author:PeakedInHighSkool', sort='new', limit=2):
+    for i in ff.search('title:Reddit Adjusted Trade AND author:PeakedInHighSkool', sort='new', limit=1):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -38,7 +35,7 @@ def get_peaked():
 
 def get_stream():
     posts = []
-    for i in ff.search('title:Stream w/Consciousness AND author:subvertadown', sort='new', limit=2):
+    for i in ff.search('title:Stream w/Consciousness AND author:subvertadown', sort='new', limit=1):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -51,7 +48,7 @@ def get_stream():
 
 def get_tvt():
     posts = []
-    for i in ff.search('title:Trade Value Tuesday AND author:HouseBlackfyre', sort='new', limit=2):
+    for i in ff.search('title:Trade Value Tuesday AND author:HouseBlackfyre', sort='new', limit=1):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -64,7 +61,7 @@ def get_tvt():
 
 def get_consolidated_waiver():
     posts = []
-    for i in ff.search('title:Consolidated Week AND author:mcphisto2', sort='new', limit=2):
+    for i in ff.search('title:Consolidated Week AND author:mcphisto2', sort='new', limit=1):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -73,7 +70,7 @@ def get_consolidated_waiver():
         'user' : "mcphisto2"
         }
         posts.append(post)
-
+    print(posts)
     return posts
 
 def get_news():
@@ -89,4 +86,4 @@ def get_news():
 
 
 # get_posts()
-get_news()
+get_consolidated_waiver()
