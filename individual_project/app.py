@@ -1,11 +1,11 @@
-from typing import Text
 from flask import Flask
 from flask import render_template
-from jinja2 import Template
-import os
 from get_data import get_posts
+from pymongo import MongoClient
 
 app = Flask(__name__)
+client = MongoClient("mongodb+srv://bloglogin:bloglogin@cluster0.ltnbx.mongodb.net/test")
+app.db = client.fantasyblog
 
 @app.route("/")
 def home_page():

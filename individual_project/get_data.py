@@ -25,7 +25,7 @@ def get_posts():
 
 def get_peaked():
     posts = []
-    for i in ff.search('title:Reddit Adjusted Trade AND author:PeakedInHighSkool', sort='new', limit=5):
+    for i in ff.search('title:Reddit Adjusted Trade AND author:PeakedInHighSkool', sort='new', limit=2):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -38,7 +38,7 @@ def get_peaked():
 
 def get_stream():
     posts = []
-    for i in ff.search('title:Stream w/Consciousness AND author:subvertadown', sort='new', limit=5):
+    for i in ff.search('title:Stream w/Consciousness AND author:subvertadown', sort='new', limit=2):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -51,7 +51,7 @@ def get_stream():
 
 def get_tvt():
     posts = []
-    for i in ff.search('title:Trade Value Tuesday AND author:HouseBlackfyre', sort='new', limit=5):
+    for i in ff.search('title:Trade Value Tuesday AND author:HouseBlackfyre', sort='new', limit=2):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -64,7 +64,7 @@ def get_tvt():
 
 def get_consolidated_waiver():
     posts = []
-    for i in ff.search('title:Consolidated Week AND author:mcphisto2', sort='new', limit=5):
+    for i in ff.search('title:Consolidated Week AND author:mcphisto2', sort='new', limit=2):
         post = {
         'title' : i.title,
         'url' : i.url,
