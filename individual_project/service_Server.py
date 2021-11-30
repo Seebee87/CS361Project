@@ -1,11 +1,16 @@
+#############################################################################
+# Created by Tristian Harville
+# as part of a group project for CS361
+# to be used by Connor Burke 
+#############################################################################
+
+
 from flask import Flask
 import requests
 import json
 import os
 
-
 app = Flask(__name__)
-
 
 @app.route('/')
 def root():
@@ -21,7 +26,6 @@ def root():
 
     # return json.dumps(send_data)
     return send_data
-
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 7777))
