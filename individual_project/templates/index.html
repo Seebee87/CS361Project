@@ -22,6 +22,7 @@
     <main>
         <section>
             <h1>RECENT AWESOME FANTASY POSTS</h1>
+            <h2>{test}</h2>
             <article class = 'post'>
                 {% for peaked in peaked %}
                 <div>
@@ -29,6 +30,28 @@
                 </div>
                 <p class = "post_details">{{peaked['user']}} • posted on: {{peaked['created']}} • {{peaked['num_comments']}} comments</p>
                 {% endfor %}
+
+                {% for stream in stream %}
+                <div>
+                    <h2 class = 'post_title'><a href="{{stream['url']}}" class = "post_link">{{stream['title']}}</a></h2>
+                </div>
+                <p class = "post_details">{{stream['user']}} • posted on: {{stream['created']}} • {{stream['num_comments']}} comments</p>
+                {% endfor %}
+
+                {% for tvt in tvt %}
+                <div>
+                    <h2 class = 'post_title'><a href="{{tvt['url']}}" class = "post_link">{{tvt['title']}}</a></h2>
+                </div>
+                <p class = "post_details">{{tvt['user']}} • posted on: {{tvt['created']}} • {{tvt['num_comments']}} comments</p>
+                {% endfor %}
+                
+                {% for consolidated in consolidated %}
+                <div>
+                    <h2 class = 'post_title'><a href="{{consolidated['url']}}" class = "post_link">{{consolidated['title']}}</a></h2>
+                </div>
+                <p class = "post_details">{{consolidated['user']}} • posted on: {{consolidated['created']}} • {{consolidated['num_comments']}} comments</p>
+                {% endfor %}
+
             </article>
         </section>
         <section>

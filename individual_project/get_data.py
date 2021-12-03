@@ -1,6 +1,3 @@
-from bs4 import BeautifulSoup
-from requests import get, Response
-import json
 import requests
 import praw
 import datetime
@@ -21,11 +18,12 @@ def get_posts():
     tvt = get_tvt()
     consolidated = get_consolidated_waiver()
     news = get_news()
-    return(peaked, stream, tvt, consolidated, news)
+    posts = [peaked, stream, tvt, consolidated, news]
+    return(posts)
 
 def get_peaked():
     posts = []
-    for i in ff.search('title:Reddit Adjusted Trade AND author:PeakedInHighSkool', sort='new', limit=5):
+    for i in ff.search('title:Reddit Adjusted Trade AND author:PeakedInHighSkool', sort='new', limit=1):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -33,12 +31,12 @@ def get_peaked():
         'num_comments' : i.num_comments,
         'user' : "PeakedInHighSkool"
         }
-        posts.append(post)
+        posts.append(post)        
     return posts
 
 def get_stream():
     posts = []
-    for i in ff.search('title:Stream w/Consciousness AND author:subvertadown', sort='new', limit=5):
+    for i in ff.search('title:Stream w/Consciousness AND author:subvertadown', sort='new', limit=1):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -51,7 +49,7 @@ def get_stream():
 
 def get_tvt():
     posts = []
-    for i in ff.search('title:Trade Value Tuesday AND author:HouseBlackfyre', sort='new', limit=5):
+    for i in ff.search('title:Trade Value Tuesday AND author:HouseBlackfyre', sort='new', limit=1):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -64,7 +62,7 @@ def get_tvt():
 
 def get_consolidated_waiver():
     posts = []
-    for i in ff.search('title:Consolidated Week AND author:mcphisto2', sort='new', limit=5):
+    for i in ff.search('title:Consolidated Week AND author:mcphisto2', sort='new', limit=1):
         post = {
         'title' : i.title,
         'url' : i.url,
@@ -73,7 +71,6 @@ def get_consolidated_waiver():
         'user' : "mcphisto2"
         }
         posts.append(post)
-
     return posts
 
 def get_news():
@@ -86,7 +83,3 @@ def get_news():
     news_list.append(news["4"])
     news_list.append(news["5"])
     return news_list
-
-
-# get_posts()
-get_news()
