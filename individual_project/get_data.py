@@ -83,7 +83,3 @@ def get_news():
     news_list.append(news["4"])
     news_list.append(news["5"])
     return news_list
-
-
-# get_posts()
-get_consolidated_waiver()
